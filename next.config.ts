@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   // If you're deploying to https://<username>.github.io/<repository>/, 
   // you must set the basePath to /<repository>
   basePath: "/synthelia_webpage",
+  trailingSlash: true
 };
 
 export default nextConfig;
