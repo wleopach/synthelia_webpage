@@ -1,6 +1,8 @@
 name: Deploy Next.js site to Pages
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: ["main"]
@@ -25,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -40,9 +42,7 @@ jobs:
         run: npm ci
 
       - name: Build Next.js
-        run: |
-          npm run build
-          npx next export
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
