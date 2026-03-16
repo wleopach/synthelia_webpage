@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import logo from "@/public/logo.png"; // or the correct relative path
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-sans selection:bg-blue-100 dark:bg-zinc-950 dark:text-zinc-100">
@@ -8,7 +8,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src={logo}
               alt="Synthellia Logo"
               width={32}
               height={32}
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="flex items-center justify-center gap-2 mb-4">
              <Image
-              src="/logo.png"
+              src={logo}
               alt="Synthellia Logo"
               width={24}
               height={24}
