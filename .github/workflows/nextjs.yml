@@ -45,7 +45,7 @@ jobs:
         run: npm run build
 
       - name: List output
-        run: ls -la ./out   # check that images/fonts/etc are here
+        run: grep -i "logo\|favicon" ./out/index.html | head -20
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
