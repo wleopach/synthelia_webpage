@@ -19,12 +19,12 @@ export default function Home() {
             </span>
           </div>
           <div className="hidden space-x-8 md:flex">
-            <a href="#services" className="text-sm font-medium hover:text-blue-600 transition-colors">Services</a>
-            <a href="#tech" className="text-sm font-medium hover:text-blue-600 transition-colors">Tech Stack</a>
-            <a href="#contact" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
+            <a href="#services-section" className="text-sm font-medium hover:text-blue-600 transition-colors">Services</a>
+            <a href="#tech-section" className="text-sm font-medium hover:text-blue-600 transition-colors">Tech Stack</a>
+            <a href="#contact-section" className="text-sm font-medium hover:text-blue-600 transition-colors">Contact</a>
           </div>
           <a
-            href="#contact"
+            href="#contact-section"
             className="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20"
           >
             Get Started
@@ -35,23 +35,23 @@ export default function Home() {
       <main>
         {/* Hero Section */}
         <section className="relative overflow-hidden px-4 pt-24 pb-32 sm:px-6 lg:px-8">
-          <div className="absolute top-0 left-1/2 -z-10 h-[600px] w-[1000px] -translate-x-1/2 bg-[radial-gradient(circle_at_center,var(--color-blue-500)_0%,transparent_70%)] opacity-[0.08] dark:opacity-[0.15]" />
+          <div className="absolute top-0 left-1/2 -z-10 h-150 w-250 -translate-x-1/2 bg-[radial-gradient(circle_at_center,var(--color-blue-500)_0%,transparent_70%)] opacity-[0.08] dark:opacity-[0.15]" />
           <div className="mx-auto max-w-7xl text-center">
             <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl">
-              Elevating Connectivity with <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Synthellia</span>
+              Elevating Connectivity with <span className="bg-linear-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Synthellia</span>
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400 sm:text-xl">
               Modern messaging solutions, powerful dashboards, and robust API integrations designed to scale your business.
             </p>
             <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <a
-                href="#services"
+                href="#services-section"
                 className="w-full rounded-full bg-zinc-900 px-8 py-4 text-center font-bold text-white transition-all hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 sm:w-auto"
               >
                 Our Services
               </a>
               <a
-                href="#tech"
+                href="#tech-section"
                 className="w-full rounded-full border border-zinc-200 bg-white px-8 py-4 text-center font-bold text-zinc-900 transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:hover:bg-zinc-900 sm:w-auto"
               >
                 Learn More
@@ -61,7 +61,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="bg-zinc-50 py-24 dark:bg-zinc-900/30">
+        <section id="services-section" className="bg-zinc-50 py-24 dark:bg-zinc-900/30">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-16 text-center">
               <h2 className="text-3xl font-bold sm:text-4xl">What we do</h2>
@@ -110,7 +110,7 @@ export default function Home() {
         </section>
 
         {/* Tech Stack Section */}
-        <section id="tech" className="py-24">
+        <section id="tech-section" className="py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
@@ -119,8 +119,20 @@ export default function Home() {
                   We use cutting-edge frameworks to ensure your application is fast, secure, and ready for the future.
                 </p>
                 <div className="mt-10 grid grid-cols-2 gap-6">
-                  {["Next.js 15+", "Angular", "Python", "FastAPI", "Django", "Meta WhatsApp API"].map((tech) => (
-                    <div key={tech} className="flex items-center gap-2">
+                  {[
+                        "Next.js 15+",
+                        "Angular",
+                        "Python",
+                        "FastAPI",
+                        "Django",
+                        "Meta WhatsApp API",
+                        "AWS",
+                        "GCP",
+                        "Azure",
+                        "Docker",
+                        "Terraform",
+                      ].map((tech) => (
+                        <div key={tech} className="flex items-center gap-2">
                       <svg className="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
@@ -130,12 +142,19 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square rounded-3xl bg-gradient-to-tr from-blue-600/10 to-cyan-500/10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800">
-                  <div className="grid grid-cols-2 gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                     <div className="text-center font-bold text-2xl">NEXT.JS</div>
-                     <div className="text-center font-bold text-2xl">ANGULAR</div>
-                     <div className="text-center font-bold text-2xl text-blue-500">PYTHON</div>
-                     <div className="text-center font-bold text-2xl text-green-500">DJANGO</div>
+                <div className="aspect-square rounded-3xl bg-linear-to-tr from-blue-600/10 to-cyan-500/10 flex items-center justify-center border border-zinc-200 dark:border-zinc-800 group">
+                  <div className="grid grid-cols-3 gap-6 opacity-50 grayscale group-hover:grayscale-0 transition-all duration-500 p-8">
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-blue-500 transition-colors cursor-default">NEXT.JS</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-red-500 transition-colors cursor-default">ANGULAR</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg text-blue-500 hover:text-yellow-500 transition-colors cursor-default">PYTHON</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg text-green-500 hover:text-emerald-400 transition-colors cursor-default">DJANGO</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-teal-400 transition-colors cursor-default">FASTAPI</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-blue-600 transition-colors cursor-default">META</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-orange-500 transition-colors cursor-default">AWS</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-blue-400 transition-colors cursor-default">GCP</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-blue-700 transition-colors cursor-default">AZURE</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-sky-500 transition-colors cursor-default">DOCKER</div>
+                     <div className="text-center font-bold text-xs sm:text-sm lg:text-lg hover:text-purple-500 transition-colors cursor-default">TERRAFORM</div>
                   </div>
                 </div>
               </div>
@@ -144,7 +163,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="px-4 py-24 sm:px-6 lg:px-8">
+        <section id="contact-section" className="px-4 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-blue-600 py-16 px-8 text-center text-white shadow-2xl shadow-blue-500/30">
             <h2 className="text-3xl font-bold sm:text-5xl">Ready to build something great?</h2>
             <p className="mx-auto mt-6 max-w-xl text-lg text-blue-100">
@@ -152,7 +171,7 @@ export default function Home() {
             </p>
             <div className="mt-10">
               <a
-                href="mailto:hello@synthellia.com"
+                href="mailto:wleonardop@gmail.com"
                 className="inline-block rounded-full bg-white px-8 py-4 font-bold text-blue-600 transition-transform hover:scale-105"
               >
                 Contact Us
